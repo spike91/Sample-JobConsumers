@@ -1,0 +1,354 @@
+﻿Starting IIS Express ...
+﻿Successfully registered URL "http://localhost:37590/" for site "JobService.Service" application "/"
+﻿Successfully registered URL "https://localhost:44318/" for site "JobService.Service" application "/"
+﻿Registration completed for site "JobService.Service"
+﻿IIS Express is running.
+﻿[15:45:53 INF] Configured endpoint convert-job-queue, Consumer: JobService.Components.ConvertVideoJobConsumer
+﻿[15:45:53 INF] Configured endpoint track-video-converted, Consumer: JobService.Service.Components.TrackVideoConvertedConsumer
+﻿[15:45:53 INF] Configured endpoint job-type, Saga: MassTransit.JobTypeSaga, State Machine: MassTransit.JobTypeStateMachine
+﻿[15:45:53 INF] Configured endpoint job, Saga: MassTransit.JobSaga, State Machine: MassTransit.JobStateMachine
+﻿[15:45:53 INF] Configured endpoint job-attempt, Saga: MassTransit.JobAttemptSaga, State Machine: MassTransit.JobAttemptStateMachine
+﻿[15:45:54 DBG] Starting bus instances: IBus
+﻿[15:45:54 DBG] Starting bus: rabbitmq://localhost/
+﻿[15:45:54 DBG] Connect: guest@localhost:5672/
+﻿[15:45:54 DBG] Connected: guest@localhost:5672/ (address: amqp://localhost:5672, local: 64364)
+﻿[15:45:54 DBG] Endpoint Ready: rabbitmq://localhost/iisexpress_bus_3u8oyyfmechx8sbubdqgf1tfr5?temporary=true
+﻿[15:45:54 DBG] Declare queue: name: job, durable, consumer-count: 0 message-count: 0
+﻿[15:45:54 DBG] Declare queue: name: job-attempt, durable, consumer-count: 0 message-count: 1
+﻿[15:45:54 DBG] Declare queue: name: track-video-converted, durable, consumer-count: 0 message-count: 0
+﻿[15:45:54 DBG] Declare queue: name: convert-job-queue, durable, consumer-count: 0 message-count: 0
+﻿[15:45:54 DBG] Declare queue: name: job-type, durable, consumer-count: 0 message-count: 0
+﻿[15:45:54 DBG] Declare queue: name: instance-3u8oyyfmechx8bwobdqgf1tffr, auto-delete, consumer-count: 0 message-count: 0
+﻿[15:45:54 DBG] Declare exchange: name: job-type, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: instance-3u8oyyfmechx8bwobdqgf1tffr, type: fanout, auto-delete
+﻿[15:45:54 DBG] Declare exchange: name: track-video-converted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: job-attempt, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: job, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: convert-job-queue, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:CancelJob, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: JobService.Components:VideoConverted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:SetConcurrentJobLimit, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptStarted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: JobService.Components:ConvertVideo, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptStarted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptCanceled, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:SubmitJob--JobService.Components:ConvertVideo--, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptCanceled, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptFaulted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:RetryJob, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptCompleted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobSubmitted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptFaulted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptCompleted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:CancelJob, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobCompleted, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:GetJobState, type: fanout, durable
+﻿[15:45:54 DBG] Bind queue: source: convert-job-queue, destination: convert-job-queue
+﻿[15:45:54 DBG] Bind queue: source: job-type, destination: job-type
+﻿[15:45:54 DBG] Bind queue: source: track-video-converted, destination: track-video-converted
+﻿[15:45:54 DBG] Bind queue: source: job-attempt, destination: job-attempt
+﻿[15:45:54 DBG] Bind queue: source: instance-3u8oyyfmechx8bwobdqgf1tffr, destination: instance-3u8oyyfmechx8bwobdqgf1tffr
+﻿[15:45:54 DBG] Bind queue: source: job, destination: job
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:SetConcurrentJobLimit, destination: job-type
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:CancelJob, destination: instance-3u8oyyfmechx8bwobdqgf1tffr
+﻿[15:45:54 DBG] Bind exchange: source: JobService.Components:VideoConverted, destination: track-video-converted
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobAttemptStarted, destination: job-attempt
+﻿[15:45:54 DBG] Bind exchange: source: JobService.Components:ConvertVideo, destination: convert-job-queue
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobAttemptStarted, destination: job
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobAttemptCanceled, destination: job
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:SubmitJob--JobService.Components:ConvertVideo--, destination: convert-job-queue
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobAttemptCanceled, destination: job-attempt
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobAttemptFaulted, destination: job-attempt
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:RetryJob, destination: job
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobAttemptCompleted, destination: job-attempt
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobSubmitted, destination: job
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobAttemptFaulted, destination: job
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobAttemptCompleted, destination: job
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:CancelJob, destination: job
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:JobCompleted, destination: job
+﻿[15:45:54 DBG] Bind exchange: source: MassTransit.Contracts.JobService:GetJobState, destination: job
+﻿[15:45:54 DBG] Consumer Ok: rabbitmq://localhost/job - amq.ctag-x9HGwU_n8IGfkAER7-KROg
+﻿[15:45:54 DBG] Consumer Ok: rabbitmq://localhost/job-attempt - amq.ctag-lEBd1RiBGEI93ACvaGX3tg
+﻿[15:45:54 DBG] Consumer Ok: rabbitmq://localhost/track-video-converted - amq.ctag-qfMajVvmpMtDRY6N46ILHw
+﻿[15:45:54 DBG] Consumer Ok: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true - amq.ctag-zt_it4Ha2eNR6yXx3fm5LQ
+﻿[15:45:54 DBG] Endpoint Ready: rabbitmq://localhost/track-video-converted
+﻿[15:45:54 DBG] Endpoint Ready: rabbitmq://localhost/job-attempt
+﻿[15:45:54 DBG] Endpoint Ready: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:45:54 DBG] Endpoint Ready: rabbitmq://localhost/job
+﻿[15:45:54 DBG] Consumer Ok: rabbitmq://localhost/job-type - amq.ctag-J2qjQOufGdfc98g0m3Yeow
+﻿[15:45:54 DBG] Endpoint Ready: rabbitmq://localhost/job-type
+﻿[15:45:54 DBG] Consumer Ok: rabbitmq://localhost/convert-job-queue - amq.ctag-mhX3Y6kKG7ALyYEDu7LY7Q
+﻿[15:45:54 DBG] Endpoint Ready: rabbitmq://localhost/convert-job-queue
+﻿[15:45:54 DBG] Job Service starting: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:45:54 DBG] Job Service type: JobService.Components.ConvertVideo
+﻿[15:45:54 DBG] Creating Redis Connection Multiplexer: localhost:32768,password=*****,abortConnect=False
+﻿[15:45:54 DBG] Declare exchange: name: MassTransit.Contracts.JobService:SetConcurrentJobLimit, type: fanout, durable
+﻿[15:45:54 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:SetConcurrentJobLimit cccf0000-ab43-38f3-84e0-08dc62ca264c MassTransit.Contracts.JobService.SetConcurrentJobLimit
+﻿[15:45:54 INF] Job Service started: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:45:54 INF] Bus started: rabbitmq://localhost/
+﻿[15:45:54 INF] Application started. Press Ctrl+C to shut down.
+﻿[15:45:54 INF] Hosting environment: Development
+﻿[15:45:54 DBG] SAGA:MassTransit.JobAttemptSaga:e8cf0000-ab43-38f3-25db-08dc62c9feee Used MassTransit.Contracts.JobService.JobStatusCheckRequested
+﻿[15:45:54 DBG] SAGA:MassTransit.JobTypeSaga:1eddf630-e76e-c49e-dad9-ce66f25259f7 Used MassTransit.Contracts.JobService.SetConcurrentJobLimit
+﻿[15:45:54 DBG] Job Service Instance Started: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:45:54 DBG] Concurrent Job Limit: 10 JobService.Components.ConvertVideoJobConsumer:JobService.Components.ConvertVideo:convert-job-queue
+﻿[15:45:54 DBG] Create send transport: rabbitmq://localhost/job-attempt
+﻿[15:45:54 DBG] Create send transport: rabbitmq://localhost/instance-7d8oyyfmechxg3a7bdqgf1xor9?temporary=true
+﻿[15:45:54 DBG] RECEIVE rabbitmq://localhost/job-type cccf0000-ab43-38f3-84e0-08dc62ca264c MassTransit.Contracts.JobService.SetConcurrentJobLimit MassTransit.JobTypeSaga(00:00:00.2036741)
+﻿[15:45:54 DBG] RECEIVE rabbitmq://localhost/job-attempt e8cf0000-ab43-38f3-8561-08dc62c9fef3 MassTransit.Contracts.JobService.JobStatusCheckRequested MassTransit.JobAttemptSaga(00:00:00.4247478)
+﻿[15:45:54 DBG] Declare exchange: name: job-attempt, type: fanout, durable
+﻿[15:45:54 DBG] Declare exchange: name: job-attempt_delay, type: x-delayed-message, durable, x-delayed-type: fanout
+﻿[15:45:54 DBG] Declare exchange: name: job-attempt, type: fanout, durable
+﻿[15:45:54 DBG] Bind exchange: source: job-attempt_delay, destination: job-attempt
+﻿[15:45:55 DBG] SEND rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-8b8e-08dc62ca268e MassTransit.Contracts.JobService.JobStatusCheckRequested
+﻿[15:45:55 DBG] Declare exchange: name: instance-7d8oyyfmechxg3a7bdqgf1xor9, type: fanout, auto-delete
+﻿[15:45:55 DBG] SEND rabbitmq://localhost/instance-7d8oyyfmechxg3a7bdqgf1xor9?temporary=true cccf0000-ab43-38f3-e5ad-08dc62ca2697 MassTransit.Contracts.JobService.GetJobAttemptStatus
+﻿[15:46:13 INF] Sending job: CancellationShouldBeRequested
+﻿[15:46:13 DBG] Declare exchange: name: MassTransit.Contracts.JobService:SubmitJob--JobService.Components:ConvertVideo--, type: fanout, durable
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:SubmitJob--JobService.Components:ConvertVideo-- cccf0000-ab43-38f3-0e1d-08dc62ca31a0 MassTransit.Contracts.JobService.SubmitJob<JobService.Components.ConvertVideo>
+﻿[15:46:13 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobSubmitted, type: fanout, durable
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobSubmitted cccf0000-ab43-38f3-3331-08dc62ca31a8 MassTransit.Contracts.JobService.JobSubmitted
+﻿[15:46:13 DBG] RECEIVE rabbitmq://localhost/convert-job-queue cccf0000-ab43-38f3-0e1d-08dc62ca31a0 MassTransit.Contracts.JobService.SubmitJob<JobService.Components.ConvertVideo> MassTransit.JobService.SubmitJobConsumer<JobService.Components.ConvertVideo>(00:00:00.0578055)
+﻿[15:46:13 DBG] SAGA:MassTransit.JobSaga:cccf0000-ab43-38f3-2026-08dc62ca319b Created MassTransit.Contracts.JobService.JobSubmitted
+﻿[15:46:13 DBG] SAGA:MassTransit.JobSaga:cccf0000-ab43-38f3-2026-08dc62ca319b Added MassTransit.Contracts.JobService.JobSubmitted
+﻿[15:46:13 DBG] Create send transport: rabbitmq://localhost/job-type
+﻿[15:46:13 DBG] RECEIVE rabbitmq://localhost/job cccf0000-ab43-38f3-3331-08dc62ca31a8 MassTransit.Contracts.JobService.JobSubmitted MassTransit.JobSaga(00:00:00.0410644)
+﻿[15:46:13 DBG] Declare exchange: name: job-type, type: fanout, durable
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/job-type cccf0000-ab43-38f3-b5d4-08dc62ca31b1 MassTransit.Contracts.JobService.AllocateJobSlot
+﻿[15:46:13 DBG] SAGA:MassTransit.JobTypeSaga:1eddf630-e76e-c49e-dad9-ce66f25259f7 Used MassTransit.Contracts.JobService.AllocateJobSlot
+﻿[15:46:13 DBG] Allocated Job Slot: cccf0000-ab43-38f3-2026-08dc62ca319b (4): rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true (1)
+﻿[15:46:13 DBG] Create send transport: rabbitmq://localhost/job
+﻿[15:46:13 DBG] RECEIVE rabbitmq://localhost/job-type cccf0000-ab43-38f3-b5d4-08dc62ca31b1 MassTransit.Contracts.JobService.AllocateJobSlot MassTransit.JobTypeSaga(00:00:00.0349292)
+﻿[15:46:13 DBG] Declare exchange: name: job, type: fanout, durable
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/job cccf0000-ab43-38f3-dc5e-08dc62ca31b8 MassTransit.Contracts.JobService.JobSlotAllocated
+﻿[15:46:13 DBG] SAGA:MassTransit.JobSaga:cccf0000-ab43-38f3-2026-08dc62ca319b Used MassTransit.Contracts.JobService.JobSlotAllocated
+﻿[15:46:13 DBG] Create send transport: rabbitmq://localhost/job-attempt
+﻿[15:46:13 DBG] RECEIVE rabbitmq://localhost/job cccf0000-ab43-38f3-dc5e-08dc62ca31b8 MassTransit.Contracts.JobService.JobSlotAllocated MassTransit.JobSaga(00:00:00.0278195)
+﻿[15:46:13 DBG] Declare exchange: name: job-attempt, type: fanout, durable
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-31d4-08dc62ca31bf MassTransit.Contracts.JobService.StartJobAttempt
+﻿[15:46:13 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-8956-08dc62ca31ad Created MassTransit.Contracts.JobService.StartJobAttempt
+﻿[15:46:13 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-8956-08dc62ca31ad Added MassTransit.Contracts.JobService.StartJobAttempt
+﻿[15:46:13 DBG] Create send transport: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:46:13 DBG] RECEIVE rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-31d4-08dc62ca31bf MassTransit.Contracts.JobService.StartJobAttempt MassTransit.JobAttemptSaga(00:00:00.0288834)
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-3b19-08dc62ca31c5 MassTransit.Contracts.JobService.JobStatusCheckRequested
+﻿[15:46:13 DBG] Declare exchange: name: instance-3u8oyyfmechx8bwobdqgf1tffr, type: fanout, auto-delete
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true cccf0000-ab43-38f3-c8b4-08dc62ca31c5 MassTransit.Contracts.JobService.StartJob
+﻿[15:46:13 DBG] Executing job: JobService.Components.ConvertVideo cccf0000-ab43-38f3-2026-08dc62ca319b (0)
+﻿[15:46:13 DBG] Job Started: cccf0000-ab43-38f3-2026-08dc62ca319b cccf0000-ab43-38f3-8956-08dc62ca31ad (0)
+﻿[15:46:13 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptStarted, type: fanout, durable
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobAttemptStarted cccf0000-ab43-38f3-9f9c-08dc62ca31cc MassTransit.Contracts.JobService.JobAttemptStarted
+﻿[15:46:13 INF] Converting Video: cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:13 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-8956-08dc62ca31ad Used MassTransit.Contracts.JobService.JobAttemptStarted
+﻿[15:46:13 DBG] SAGA:MassTransit.JobSaga:cccf0000-ab43-38f3-2026-08dc62ca319b Used MassTransit.Contracts.JobService.JobAttemptStarted
+﻿[15:46:13 DBG] RECEIVE rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-9f9c-08dc62ca31cc MassTransit.Contracts.JobService.JobAttemptStarted MassTransit.JobAttemptSaga(00:00:00.0231668)
+﻿[15:46:13 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobStarted--JobService.Components:ConvertVideo--, type: fanout, durable
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobStarted--JobService.Components:ConvertVideo-- cccf0000-ab43-38f3-387b-08dc62ca31d2 MassTransit.Contracts.JobService.JobStarted<JobService.Components.ConvertVideo>
+﻿[15:46:13 DBG] RECEIVE rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true cccf0000-ab43-38f3-c8b4-08dc62ca31c5 MassTransit.Contracts.JobService.StartJob MassTransit.JobService.StartJobConsumer<JobService.Components.ConvertVideo>(00:00:00.0828681)
+﻿[15:46:13 DBG] RECEIVE rabbitmq://localhost/job cccf0000-ab43-38f3-9f9c-08dc62ca31cc MassTransit.Contracts.JobService.JobAttemptStarted MassTransit.JobSaga(00:00:00.0493197)
+﻿[15:46:13 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobStarted, type: fanout, durable
+﻿[15:46:13 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobStarted cccf0000-ab43-38f3-834c-08dc62ca31d6 MassTransit.Contracts.JobService.JobStarted
+﻿[15:46:16 INF] Converting Video: cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:19 INF] Converting Video: cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:20 INF] Converting Video: cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:23 INF] Converting Video: cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:24 INF] Converting Video: cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:27 INF] Stop bus called
+﻿[15:46:27 DBG] Job Service shutting down: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:46:27 DBG] Canceling job: cccf0000-ab43-38f3-2026-08dc62ca319b
+﻿[15:46:27 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:29 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:31 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:33 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:36 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:38 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:40 INF] Sending job: BusIsStopping_ShouldNotBeStarted
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:SubmitJob--JobService.Components:ConvertVideo-- cccf0000-ab43-38f3-65d2-08dc62ca4169 MassTransit.Contracts.JobService.SubmitJob<JobService.Components.ConvertVideo>
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobSubmitted cccf0000-ab43-38f3-6436-08dc62ca416a MassTransit.Contracts.JobService.JobSubmitted
+﻿[15:46:40 DBG] RECEIVE rabbitmq://localhost/convert-job-queue cccf0000-ab43-38f3-65d2-08dc62ca4169 MassTransit.Contracts.JobService.SubmitJob<JobService.Components.ConvertVideo> MassTransit.JobService.SubmitJobConsumer<JobService.Components.ConvertVideo>(00:00:00.0062589)
+﻿[15:46:40 DBG] SAGA:MassTransit.JobSaga:cccf0000-ab43-38f3-150a-08dc62ca4169 Created MassTransit.Contracts.JobService.JobSubmitted
+﻿[15:46:40 DBG] SAGA:MassTransit.JobSaga:cccf0000-ab43-38f3-150a-08dc62ca4169 Added MassTransit.Contracts.JobService.JobSubmitted
+﻿[15:46:40 DBG] RECEIVE rabbitmq://localhost/job cccf0000-ab43-38f3-6436-08dc62ca416a MassTransit.Contracts.JobService.JobSubmitted MassTransit.JobSaga(00:00:00.0105989)
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/job-type cccf0000-ab43-38f3-52ec-08dc62ca416c MassTransit.Contracts.JobService.AllocateJobSlot
+﻿[15:46:40 DBG] SAGA:MassTransit.JobTypeSaga:1eddf630-e76e-c49e-dad9-ce66f25259f7 Used MassTransit.Contracts.JobService.AllocateJobSlot
+﻿[15:46:40 DBG] Allocated Job Slot: cccf0000-ab43-38f3-150a-08dc62ca4169 (5): rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true (2)
+﻿[15:46:40 DBG] RECEIVE rabbitmq://localhost/job-type cccf0000-ab43-38f3-52ec-08dc62ca416c MassTransit.Contracts.JobService.AllocateJobSlot MassTransit.JobTypeSaga(00:00:00.0096907)
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/job cccf0000-ab43-38f3-149a-08dc62ca416e MassTransit.Contracts.JobService.JobSlotAllocated
+﻿[15:46:40 DBG] SAGA:MassTransit.JobSaga:cccf0000-ab43-38f3-150a-08dc62ca4169 Used MassTransit.Contracts.JobService.JobSlotAllocated
+﻿[15:46:40 DBG] RECEIVE rabbitmq://localhost/job cccf0000-ab43-38f3-149a-08dc62ca416e MassTransit.Contracts.JobService.JobSlotAllocated MassTransit.JobSaga(00:00:00.0071919)
+﻿[15:46:40 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-e8bb-08dc62ca416b Created MassTransit.Contracts.JobService.StartJobAttempt
+﻿[15:46:40 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-e8bb-08dc62ca416b Added MassTransit.Contracts.JobService.StartJobAttempt
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-6698-08dc62ca416f MassTransit.Contracts.JobService.StartJobAttempt
+﻿[15:46:40 DBG] RECEIVE rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-6698-08dc62ca416f MassTransit.Contracts.JobService.StartJobAttempt MassTransit.JobAttemptSaga(00:00:00.0040583)
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-3e9d-08dc62ca4170 MassTransit.Contracts.JobService.JobStatusCheckRequested
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true cccf0000-ab43-38f3-67be-08dc62ca4170 MassTransit.Contracts.JobService.StartJob
+﻿[15:46:40 DBG] Executing job: JobService.Components.ConvertVideo cccf0000-ab43-38f3-150a-08dc62ca4169 (0)
+﻿[15:46:40 DBG] Job Started: cccf0000-ab43-38f3-150a-08dc62ca4169 cccf0000-ab43-38f3-e8bb-08dc62ca416b (0)
+﻿[15:46:40 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-e8bb-08dc62ca416b Used MassTransit.Contracts.JobService.JobAttemptStarted
+﻿[15:46:40 DBG] SAGA:MassTransit.JobSaga:cccf0000-ab43-38f3-150a-08dc62ca4169 Used MassTransit.Contracts.JobService.JobAttemptStarted
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobAttemptStarted cccf0000-ab43-38f3-83ba-08dc62ca4171 MassTransit.Contracts.JobService.JobAttemptStarted
+﻿[15:46:40 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobStarted--JobService.Components:ConvertVideo-- cccf0000-ab43-38f3-5a2d-08dc62ca4172 MassTransit.Contracts.JobService.JobStarted<JobService.Components.ConvertVideo>
+﻿[15:46:40 DBG] RECEIVE rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true cccf0000-ab43-38f3-67be-08dc62ca4170 MassTransit.Contracts.JobService.StartJob MassTransit.JobService.StartJobConsumer<JobService.Components.ConvertVideo>(00:00:00.0182037)
+﻿[15:46:40 DBG] RECEIVE rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-83ba-08dc62ca4171 MassTransit.Contracts.JobService.JobAttemptStarted MassTransit.JobAttemptSaga(00:00:00.0148973)
+﻿[15:46:40 DBG] RECEIVE rabbitmq://localhost/job cccf0000-ab43-38f3-83ba-08dc62ca4171 MassTransit.Contracts.JobService.JobAttemptStarted MassTransit.JobSaga(00:00:00.0189396)
+﻿[15:46:40 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobStarted cccf0000-ab43-38f3-ba06-08dc62ca4174 MassTransit.Contracts.JobService.JobStarted
+﻿[15:46:40 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:42 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:43 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:44 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:44 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:46 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:47 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:48 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:50 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:50 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:52 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:52 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:53 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:54 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:54 DBG] SAGA:MassTransit.JobAttemptSaga:e8cf0000-ab43-38f3-25db-08dc62c9feee Used MassTransit.Contracts.JobService.JobStatusCheckRequested
+﻿[15:46:54 DBG] RECEIVE rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-8b8e-08dc62ca268e MassTransit.Contracts.JobService.JobStatusCheckRequested MassTransit.JobAttemptSaga(00:00:00.0090220)
+﻿[15:46:54 DBG] SEND rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-9179-08dc62ca4a47 MassTransit.Contracts.JobService.JobStatusCheckRequested
+﻿[15:46:54 DBG] SEND rabbitmq://localhost/instance-7d8oyyfmechxg3a7bdqgf1xor9?temporary=true cccf0000-ab43-38f3-cb4e-08dc62ca4a47 MassTransit.Contracts.JobService.GetJobAttemptStatus
+﻿[15:46:55 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:56 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:46:57 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:58 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:46:58 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:47:00 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:00 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:47:01 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:03 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:47:04 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:06 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:06 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:47:08 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:47:08 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:10 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:10 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:47:11 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:11 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:47:13 INF] Converting Video (CancellationRequested): cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:47:13 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-8956-08dc62ca31ad Used MassTransit.Contracts.JobService.JobStatusCheckRequested
+﻿[15:47:13 DBG] RECEIVE rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-3b19-08dc62ca31c5 MassTransit.Contracts.JobService.JobStatusCheckRequested MassTransit.JobAttemptSaga(00:00:00.0082501)
+﻿[15:47:13 DBG] SEND rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-bb28-08dc62ca5587 MassTransit.Contracts.JobService.JobStatusCheckRequested
+﻿[15:47:13 DBG] SEND rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true cccf0000-ab43-38f3-e6eb-08dc62ca5587 MassTransit.Contracts.JobService.GetJobAttemptStatus
+﻿[15:47:13 DBG] Create send transport: rabbitmq://localhost/job-attempt
+﻿[15:47:13 DBG] Declare exchange: name: job-attempt, type: fanout, durable
+﻿[15:47:13 DBG] SEND rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-f2b1-08dc62ca558b MassTransit.Contracts.JobService.JobAttemptStatus
+﻿[15:47:13 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-8956-08dc62ca31ad Used MassTransit.Contracts.JobService.JobAttemptStatus
+﻿[15:47:13 DBG] RECEIVE rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true cccf0000-ab43-38f3-e6eb-08dc62ca5587 MassTransit.Contracts.JobService.GetJobAttemptStatus MassTransit.JobService.SuperviseJobConsumer(00:00:00.0427208)
+﻿[15:47:13 DBG] RECEIVE rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-f2b1-08dc62ca558b MassTransit.Contracts.JobService.JobAttemptStatus MassTransit.JobAttemptSaga(00:00:00.0112703)
+﻿[15:47:13 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:16 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:16 DBG] Declare exchange: name: JobService.Components:VideoConverted, type: fanout, durable
+﻿[15:47:16 DBG] SEND rabbitmq://localhost/JobService.Components:VideoConverted cccf0000-ab43-38f3-53ec-08dc62ca5712 JobService.Components.VideoConverted
+﻿[15:47:16 INF] Converted Video: cccf0000-ab43-38f3-2032-08dc62ca319b CancellationShouldBeRequested
+﻿[15:47:16 DBG] Job Completed: cccf0000-ab43-38f3-2026-08dc62ca319b cccf0000-ab43-38f3-8956-08dc62ca31ad (0)
+﻿[15:47:16 INF] Group Completed: cccf0000-ab43-38f3-2032-08dc62ca319b (1)
+﻿[15:47:16 DBG] RECEIVE rabbitmq://localhost/track-video-converted cccf0000-ab43-38f3-53ec-08dc62ca5712 JobService.Components.VideoConverted JobService.Service.Components.TrackVideoConvertedConsumer(00:00:00.0033435)
+﻿[15:47:16 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobAttemptCompleted, type: fanout, durable
+﻿[15:47:16 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobAttemptCompleted cccf0000-ab43-38f3-f5ba-08dc62ca5715 MassTransit.Contracts.JobService.JobAttemptCompleted
+﻿[15:47:16 DBG] RECEIVE rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true cccf0000-ab43-38f3-c8b4-08dc62ca31c5 MassTransit.Contracts.JobService.StartJob JobService.Components.ConvertVideoJobConsumer(00:01:02.5962182)
+﻿[15:47:16 DBG] Removed job: cccf0000-ab43-38f3-2026-08dc62ca319b (RanToCompletion)
+﻿[15:47:16 DBG] SAGA:MassTransit.JobSaga:cccf0000-ab43-38f3-2026-08dc62ca319b Used MassTransit.Contracts.JobService.JobAttemptCompleted
+﻿[15:47:16 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-8956-08dc62ca31ad Used MassTransit.Contracts.JobService.JobAttemptCompleted
+﻿[15:47:16 DBG] Create send transport: rabbitmq://localhost/convert-job-queue
+﻿[15:47:16 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:SetConcurrentJobLimit cccf0000-ab43-38f3-f3f5-08dc62ca5718 MassTransit.Contracts.JobService.SetConcurrentJobLimit
+﻿[15:47:16 DBG] SAGA:MassTransit.JobTypeSaga:1eddf630-e76e-c49e-dad9-ce66f25259f7 Used MassTransit.Contracts.JobService.SetConcurrentJobLimit
+﻿[15:47:16 DBG] Job Service Instance Stopped: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:47:16 INF] Job Service shut down: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:47:16 DBG] Stopping bus: rabbitmq://localhost/
+﻿[15:47:16 DBG] SAGA:MassTransit.JobAttemptSaga:cccf0000-ab43-38f3-8956-08dc62ca31ad Removed MassTransit.Contracts.JobService.JobAttemptCompleted
+﻿[15:47:16 DBG] RECEIVE rabbitmq://localhost/job-attempt cccf0000-ab43-38f3-f5ba-08dc62ca5715 MassTransit.Contracts.JobService.JobAttemptCompleted MassTransit.JobAttemptSaga(00:00:00.0197871)
+﻿[15:47:16 DBG] RECEIVE rabbitmq://localhost/job-type cccf0000-ab43-38f3-f3f5-08dc62ca5718 MassTransit.Contracts.JobService.SetConcurrentJobLimit MassTransit.JobTypeSaga(00:00:00.0112762)
+﻿[15:47:16 DBG] Endpoint Stopping: rabbitmq://localhost/convert-job-queue
+﻿[15:47:16 DBG] Consumer Stopping: rabbitmq://localhost/convert-job-queue (Stop Receive Transport)
+﻿[15:47:16 DBG] Consumer Cancel Ok: rabbitmq://localhost/convert-job-queue - amq.ctag-mhX3Y6kKG7ALyYEDu7LY7Q
+﻿[15:47:16 DBG] Endpoint Stopping: rabbitmq://localhost/track-video-converted
+﻿[15:47:16 DBG] Consumer Stopping: rabbitmq://localhost/track-video-converted (Stop Receive Transport)
+﻿[15:47:16 DBG] Consumer Cancel Ok: rabbitmq://localhost/track-video-converted - amq.ctag-qfMajVvmpMtDRY6N46ILHw
+﻿[15:47:16 DBG] Endpoint Stopping: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:47:16 DBG] Consumer Stopping: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true (Stop Receive Transport)
+﻿[15:47:16 DBG] Endpoint Stopping: rabbitmq://localhost/job
+﻿[15:47:16 DBG] Endpoint Stopping: rabbitmq://localhost/job-type
+﻿[15:47:16 DBG] Consumer Stopping: rabbitmq://localhost/job (Stop Receive Transport)
+﻿[15:47:16 DBG] Consumer Stopping: rabbitmq://localhost/job-type (Stop Receive Transport)
+﻿[15:47:16 DBG] Endpoint Completed: rabbitmq://localhost/convert-job-queue
+﻿[15:47:16 DBG] Endpoint Stopping: rabbitmq://localhost/job-attempt
+﻿[15:47:16 DBG] Consumer Stopping: rabbitmq://localhost/job-attempt (Stop Receive Transport)
+﻿[15:47:16 DBG] Send Transport Stopping: MassTransit.Contracts.JobService:JobSubmitted
+﻿[15:47:16 DBG] Consumer Cancel Ok: rabbitmq://localhost/job-type - amq.ctag-J2qjQOufGdfc98g0m3Yeow
+﻿[15:47:16 DBG] Consumer Cancel Ok: rabbitmq://localhost/job - amq.ctag-x9HGwU_n8IGfkAER7-KROg
+﻿[15:47:16 DBG] Send Transport Stopping: job
+﻿[15:47:16 DBG] Endpoint Completed: rabbitmq://localhost/job-type
+﻿[15:47:16 DBG] Consumer Cancel Ok: rabbitmq://localhost/job-attempt - amq.ctag-lEBd1RiBGEI93ACvaGX3tg
+﻿[15:47:16 DBG] Consumer Cancel Ok: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true - amq.ctag-zt_it4Ha2eNR6yXx3fm5LQ
+﻿[15:47:16 DBG] Endpoint Completed: rabbitmq://localhost/job-attempt
+﻿[15:47:16 DBG] Send Transport Stopping: job-attempt
+﻿[15:47:16 DBG] Send Transport Stopping: MassTransit.Contracts.JobService:JobAttemptStarted
+﻿[15:47:16 DBG] Consumer Completed: rabbitmq://localhost/job-attempt: 9 received, 1 concurrent, amq.ctag-lEBd1RiBGEI93ACvaGX3tg
+﻿[15:47:16 DBG] Consumer Completed: rabbitmq://localhost/convert-job-queue: 2 received, 1 concurrent, amq.ctag-mhX3Y6kKG7ALyYEDu7LY7Q
+﻿[15:47:16 DBG] Consumer Completed: rabbitmq://localhost/job-type: 4 received, 1 concurrent, amq.ctag-J2qjQOufGdfc98g0m3Yeow
+﻿[15:47:16 DBG] Endpoint Completed: rabbitmq://localhost/track-video-converted
+﻿[15:47:16 DBG] Send Transport Stopping: instance-7d8oyyfmechxg3a7bdqgf1xor9
+﻿[15:47:16 DBG] Consumer Completed: rabbitmq://localhost/track-video-converted: 1 received, 1 concurrent, amq.ctag-qfMajVvmpMtDRY6N46ILHw
+﻿[15:47:16 DBG] Send Transport Stopping: MassTransit.Contracts.JobService:JobStarted--JobService.Components:ConvertVideo--
+﻿[15:47:16 DBG] Send Transport Stopping: instance-3u8oyyfmechx8bwobdqgf1tffr
+﻿[15:47:16 DBG] Send Transport Stopping: job-attempt
+﻿[15:47:16 DBG] Send Transport Stopping: JobService.Components:VideoConverted
+﻿[15:47:16 DBG] Send Transport Stopping: MassTransit.Contracts.JobService:JobAttemptCompleted
+﻿[15:47:16 DBG] Endpoint Completed: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true
+﻿[15:47:16 DBG] Consumer Completed: rabbitmq://localhost/instance-3u8oyyfmechx8bwobdqgf1tffr?temporary=true: 3 received, 1 concurrent, amq.ctag-zt_it4Ha2eNR6yXx3fm5LQ
+﻿[15:47:16 DBG] RECEIVE rabbitmq://localhost/job cccf0000-ab43-38f3-f5ba-08dc62ca5715 MassTransit.Contracts.JobService.JobAttemptCompleted MassTransit.JobSaga(00:00:00.1089239)
+﻿[15:47:16 DBG] Declare exchange: name: convert-job-queue, type: fanout, durable
+﻿[15:47:16 DBG] SEND rabbitmq://localhost/convert-job-queue cccf0000-ab43-38f3-9213-08dc62ca5728 MassTransit.Contracts.JobService.CompleteJob
+﻿[15:47:16 DBG] Declare exchange: name: MassTransit.Contracts.JobService:JobCompleted, type: fanout, durable
+﻿[15:47:16 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:JobCompleted cccf0000-ab43-38f3-f4e2-08dc62ca5729 MassTransit.Contracts.JobService.JobCompleted
+﻿[15:47:16 DBG] SEND rabbitmq://localhost/job-type cccf0000-ab43-38f3-196d-08dc62ca572b MassTransit.Contracts.JobService.JobSlotReleased
+﻿[15:47:16 DBG] Endpoint Completed: rabbitmq://localhost/job
+﻿[15:47:16 DBG] Consumer Completed: rabbitmq://localhost/job: 7 received, 1 concurrent, amq.ctag-x9HGwU_n8IGfkAER7-KROg
+﻿[15:47:16 DBG] Send Transport Stopping: job-type
+﻿[15:47:16 DBG] Send Transport Stopping: job-attempt
+﻿[15:47:16 DBG] Send Transport Stopping: MassTransit.Contracts.JobService:JobStarted
+﻿[15:47:16 DBG] Send Transport Stopping: convert-job-queue
+﻿[15:47:16 DBG] Send Transport Stopping: MassTransit.Contracts.JobService:JobCompleted
+﻿[15:47:16 DBG] Endpoint Stopping: rabbitmq://localhost/iisexpress_bus_3u8oyyfmechx8sbubdqgf1tfr5?temporary=true
+﻿[15:47:16 DBG] Send Transport Stopping: MassTransit.Contracts.JobService:SetConcurrentJobLimit
+﻿[15:47:16 DBG] Send Transport Stopping: MassTransit.Contracts.JobService:SubmitJob--JobService.Components:ConvertVideo--
+﻿[15:47:16 DBG] Endpoint Completed: rabbitmq://localhost/iisexpress_bus_3u8oyyfmechx8sbubdqgf1tfr5?temporary=true
+﻿[15:47:16 DBG] Disconnect: guest@localhost:5672/
+﻿[15:47:16 DBG] Disconnected: guest@localhost:5672/
+﻿[15:47:16 INF] Bus stopped: rabbitmq://localhost/
+﻿[15:47:18 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:20 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:23 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:25 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:26 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:28 INF] Sending job: BusIsStoppedShouldNotBeStarted
+﻿[15:47:28 DBG] Connect: guest@localhost:5672/
+﻿[15:47:28 DBG] Connected: guest@localhost:5672/ (address: amqp://localhost:5672, local: 64405)
+﻿[15:47:28 DBG] Declare exchange: name: MassTransit.Contracts.JobService:SubmitJob--JobService.Components:ConvertVideo--, type: fanout, durable
+﻿[15:47:28 DBG] SEND rabbitmq://localhost/MassTransit.Contracts.JobService:SubmitJob--JobService.Components:ConvertVideo-- cccf0000-ab43-38f3-24e4-08dc62ca5e37 MassTransit.Contracts.JobService.SubmitJob<JobService.Components.ConvertVideo>
+﻿[15:47:29 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:30 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:32 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:34 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:36 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:38 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:39 INF] Converting Video: cccf0000-ab43-38f3-151a-08dc62ca4169 BusIsStopping_ShouldNotBeStarted
+﻿[15:47:44 DBG] Job Faulted: cccf0000-ab43-38f3-150a-08dc62ca4169 cccf0000-ab43-38f3-e8bb-08dc62ca416b (0)
+﻿MassTransit.TransportUnavailableException: The send transport is stopped: JobService.Components:VideoConverted
+﻿   at MassTransit.Transports.SendTransport`1.Send[T](T message, IPipe`1 pipe, CancellationToken cancellationToken) in /_/src/MassTransit/Transports/SendTransport.cs:line 48
+﻿   at MassTransit.Transports.SendEndpoint.Send[T](T message, IPipe`1 pipe, CancellationToken cancellationToken) in /_/src/MassTransit/Transports/SendEndpoint.cs:line 76
+﻿   at MassTransit.Transports.CachedSendEndpoint`1.Send[T](T message, IPipe`1 pipe, CancellationToken cancellationToken) in /_/src/MassTransit/Transports/CachedSendEndpoint.cs:line 58
+﻿   at MassTransit.Transports.SendEndpointProxy.Send[T](Object values, CancellationToken cancellationToken)
+﻿   at JobService.Components.ConvertVideoJobConsumer.Run(JobContext`1 context) in C:\Sample-JobConsumers-master\Sample-JobConsumers-master\src\JobService.Components\ConvertVideoJobConsumer.cs:line 37
+﻿   at MassTransit.Middleware.JobConsumerMessageFilter`2.RunJob(PipeContext context, IJobConsumer`1 jobConsumer) in /_/src/MassTransit/Middleware/JobConsumerMessageFilter.cs:line 51
+﻿[15:47:44 DBG] Removed job: cccf0000-ab43-38f3-150a-08dc62ca4169 (Faulted)
+﻿[15:47:57 INF] Stop application host called
+﻿[15:47:57 INF] Application is shutting down...
+﻿[15:47:57 DBG] Stopping bus instances: IBus
+﻿[15:47:57 WRN] Failed to stop bus: rabbitmq://localhost/iisexpress_bus_3u8oyyfmechx8sbubdqgf1tfr5?temporary=true (Not Started)
+﻿Stopping IIS Express ...
+﻿IIS Express stopped.
