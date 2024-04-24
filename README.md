@@ -16,8 +16,8 @@ Test №1 (stopping the bus):<br />
 6. Call stop application endpoint - `http://localhost:37590/Stop/Application`
 
 The results:<br />
-Job #1 cancellation token requested (OK)<br />
-Job #2 started (Not OK)<br />
+Job #1 cancellation requested (OK)<br />
+Job #2 started with `context.CancellationToken.IsCancellationRequested=false` (Not OK)<br />
 Job #2 finished when the bus was already stopped<br />
 Job #2 faulted to publish due to stopped send transport<br />
 Job #3 was added queued but hasn't been started (OK)<br />
@@ -31,7 +31,7 @@ Test №2 (stopping the application):<br />
 
 The results:<br />
 Job #1 cancellation token requested (OK)<br />
-Job #2 started (Not OK)<br />
+Job #2 started with `context.CancellationToken.IsCancellationRequested=false` (Not OK)<br />
 Job #2 neither finished nor canceled, the application was shut down in the middle of the job execution
 
 
